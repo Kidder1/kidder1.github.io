@@ -35,26 +35,5 @@
       
     </item>
     
-    <item>
-      <title></title>
-      <link>https://kidder1.github.io/2023/07/17/wen-zhang-front-matter-xuan-xiang.html</link>
-      <guid>https://kidder1.github.io/2023/07/17/wen-zhang-front-matter-xuan-xiang.html</guid>
-      <pubDate>Sun, 16 Jul 2023 16:00:00 GMT</pubDate>
-      
-      <description>该值主要用于 seo 优化，设置后页面 description 将显示该值，未设置则取 summary 或截取部分文章内容</description>
-      
-      
-      
-      
-      <category domain="https://kidder1.github.io/categories/Markdown/">Markdown</category>
-      
-      
-      <category domain="https://kidder1.github.io/tags/Markdown/">Markdown</category>
-      
-      
-      <comments>https://kidder1.github.io/2023/07/17/wen-zhang-front-matter-xuan-xiang.html#disqus_thread</comments>
-      
-    </item>
-    
   </channel>
 </rss>
