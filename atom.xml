@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kidder1&#39;s Blog!</title>
+    <link>https://kidder1.github.io/</link>
+    
+    <atom:link href="https://kidder1.github.io/atom.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>一位喜欢吃010的Editor...</description>
+    <pubDate>Mon, 17 Jul 2023 13:17:20 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://kidder1.github.io/2023/07/17/hello-world.html</link>
+      <guid>https://kidder1.github.io/2023/07/17/hello-world.html</guid>
+      <pubDate>Mon, 17 Jul 2023 13:17:20 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://kidder1.github.io/2023/07/17/hello-world.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>typora-vue-theme主题介绍</title>
+      <link>https://kidder1.github.io/2022/04/26/demo-copy.html</link>
+      <guid>https://kidder1.github.io/2022/04/26/demo-copy.html</guid>
+      <pubDate>Tue, 26 Apr 2022 01:25:00 GMT</pubDate>
+      
+      <description>该值主要用于 seo 优化，设置后页面 description 将显示该值，未设置则取 summary 或截取部分文章内容</description>
+      
+      
+      
+      
+      <category domain="https://kidder1.github.io/categories/Markdown/">Markdown</category>
+      
+      
+      <category domain="https://kidder1.github.io/tags/Typora/">Typora</category>
+      
+      <category domain="https://kidder1.github.io/tags/Markdown/">Markdown</category>
+      
+      
+      <comments>https://kidder1.github.io/2022/04/26/demo-copy.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>typora-vue-theme主题介绍</title>
+      <link>https://kidder1.github.io/2022/04/26/demo.html</link>
+      <guid>https://kidder1.github.io/2022/04/26/demo.html</guid>
+      <pubDate>Tue, 26 Apr 2022 01:25:00 GMT</pubDate>
+      
+      <description>该值主要用于 seo 优化，设置后页面 description 将显示该值，未设置则取 summary 或截取部分文章内容</description>
+      
+      
+      
+      
+      <category domain="https://kidder1.github.io/categories/Markdown/">Markdown</category>
+      
+      
+      <category domain="https://kidder1.github.io/tags/Typora/">Typora</category>
+      
+      <category domain="https://kidder1.github.io/tags/Markdown/">Markdown</category>
+      
+      
+      <comments>https://kidder1.github.io/2022/04/26/demo.html#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>
