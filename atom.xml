@@ -6,7 +6,7 @@
   <link href="https://kidder1.github.io/atom.xml" rel="self"/>
   
   <link href="https://kidder1.github.io/"/>
-  <updated>2023-07-17T15:21:57.701Z</updated>
+  <updated>2023-07-17T15:27:46.989Z</updated>
   <id>https://kidder1.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>配置说明书</title>
-    <link href="https://kidder1.github.io/2022/04/26/demo/"/>
-    <id>https://kidder1.github.io/2022/04/26/demo/</id>
-    <published>2022-04-26T01:25:00.000Z</published>
-    <updated>2023-07-17T15:21:57.701Z</updated>
+    <title>博客配置说明书</title>
+    <link href="https://kidder1.github.io/2023/07/17/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E4%B9%A6/"/>
+    <id>https://kidder1.github.io/2023/07/17/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E4%B9%A6/</id>
+    <published>2023-07-16T16:00:00.000Z</published>
+    <updated>2023-07-17T15:27:46.989Z</updated>
     
     <content type="html"><![CDATA[<p>主题配置说明书：<a href="https://minimalism.codeover.cn/docs/introduction">https://minimalism.codeover.cn/docs/introduction</a></p>]]></content>
     
@@ -34,7 +34,7 @@
     
     
     
-    <category term="Markdown" scheme="https://kidder1.github.io/categories/Markdown/"/>
+    <category term="Begin" scheme="https://kidder1.github.io/categories/Begin/"/>
     
     
   </entry>
