@@ -6,7 +6,7 @@
   <link href="https://kidder1.github.io/atom.xml" rel="self"/>
   
   <link href="https://kidder1.github.io/"/>
-  <updated>2023-07-18T01:39:28.910Z</updated>
+  <updated>2023-07-18T01:51:43.477Z</updated>
   <id>https://kidder1.github.io/</id>
   
   <author>
@@ -21,37 +21,15 @@
     <link href="https://kidder1.github.io/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     <id>https://kidder1.github.io/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</id>
     <published>2023-07-18T01:30:09.000Z</published>
-    <updated>2023-07-18T01:39:28.910Z</updated>
+    <updated>2023-07-18T01:51:43.477Z</updated>
     
-    <content type="html"><![CDATA[<p>exo使用说明</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo cl # 清理缓存</span><br><span class="line">hexo g  # 生成博客</span><br><span class="line">hexo s  # 本地部署</span><br><span class="line">hexo d  # 上线部署</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;exo使用说明&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/s</summary>
-      
-    
-    
-    
-    <category term="Begin" scheme="https://kidder1.github.io/categories/Begin/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>转站说明</title>
-    <link href="https://kidder1.github.io/2023/07/17/%E8%AF%B4%E6%98%8E/"/>
-    <id>https://kidder1.github.io/2023/07/17/%E8%AF%B4%E6%98%8E/</id>
-    <published>2023-07-16T16:00:00.000Z</published>
-    <updated>2023-07-17T15:55:31.007Z</updated>
-    
-    <content type="html"><![CDATA[<p>懒得维护这么一个网站，东西越多，事情越多，很多东西不能专注，然后就会报复性的放松和逃避，我想这不是一个解决事情的好办法。想来想去，还是决定从一个新的地方开始了。<br>美化的尽头总是简约了，目的还是记录一些后面可以用的到的东西。关于我有我的微信，希望大家喜欢和和多多交流。</p>]]></content>
+    <content type="html"><![CDATA[<p>Hexo使用说明</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo cl # 清理缓存</span><br><span class="line">hexo g  # 生成博客</span><br><span class="line">hexo s  # 本地部署</span><br><span class="line">hexo d  # 上线部署</span><br></pre></td></tr></table></figure><p><a class="simple-lightbox" href="/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/image-20230718094005578.png"><img   src="/images/loading.svg" data-src="/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/image-20230718094005578.png"  alt="image-20230718094005578" lazyload></a></p><a class="simple-lightbox" href="/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/image-20230718094005578.png"><img   src="/images/loading.svg" data-src="/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/image-20230718094005578.png"  class="" title="This is an test image" lazyload></a>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;懒得维护这么一个网站，东西越多，事情越多，很多东西不能专注，然后就会报复性的放松和逃避，我想这不是一个解决事情的好办法。想来想去，还是决定从一个新的地方开始了。&lt;br&gt;美化的尽头总是简约了，目的还是记录一些后面可以用的到的东西。关于我有我的微信，希望大家喜欢和和多多交流。&lt;</summary>
+    <summary type="html">&lt;p&gt;Hexo使用说明&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/</summary>
       
     
     
@@ -75,6 +53,28 @@
       
     <summary type="html">&lt;p&gt;主题配置说明书：&lt;a href=&quot;https://minimalism.codeover.cn/docs/introduction&quot;&gt;https://minimalism.codeover.cn/docs/introduction&lt;/a&gt;&lt;/p&gt;
 </summary>
+      
+    
+    
+    
+    <category term="Begin" scheme="https://kidder1.github.io/categories/Begin/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>转站说明</title>
+    <link href="https://kidder1.github.io/2023/07/17/%E8%AF%B4%E6%98%8E/"/>
+    <id>https://kidder1.github.io/2023/07/17/%E8%AF%B4%E6%98%8E/</id>
+    <published>2023-07-16T16:00:00.000Z</published>
+    <updated>2023-07-17T15:55:31.007Z</updated>
+    
+    <content type="html"><![CDATA[<p>懒得维护这么一个网站，东西越多，事情越多，很多东西不能专注，然后就会报复性的放松和逃避，我想这不是一个解决事情的好办法。想来想去，还是决定从一个新的地方开始了。<br>美化的尽头总是简约了，目的还是记录一些后面可以用的到的东西。关于我有我的微信，希望大家喜欢和和多多交流。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;懒得维护这么一个网站，东西越多，事情越多，很多东西不能专注，然后就会报复性的放松和逃避，我想这不是一个解决事情的好办法。想来想去，还是决定从一个新的地方开始了。&lt;br&gt;美化的尽头总是简约了，目的还是记录一些后面可以用的到的东西。关于我有我的微信，希望大家喜欢和和多多交流。&lt;</summary>
       
     
     
