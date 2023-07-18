@@ -6,7 +6,7 @@
   <link href="https://kidder1.github.io/atom.xml" rel="self"/>
   
   <link href="https://kidder1.github.io/"/>
-  <updated>2023-07-18T01:53:51.953Z</updated>
+  <updated>2023-07-18T02:27:06.816Z</updated>
   <id>https://kidder1.github.io/</id>
   
   <author>
@@ -17,25 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hexo使用说明</title>
+    <title>Hexo使用说明</title>
     <link href="https://kidder1.github.io/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     <id>https://kidder1.github.io/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</id>
     <published>2023-07-18T01:30:09.000Z</published>
-    <updated>2023-07-18T01:53:51.953Z</updated>
+    <updated>2023-07-18T02:27:06.816Z</updated>
     
-    <content type="html"><![CDATA[<p>Hexo使用说明</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo cl # 清理缓存</span><br><span class="line">hexo g  # 生成博客</span><br><span class="line">hexo s  # 本地部署</span><br><span class="line">hexo d  # 上线部署</span><br></pre></td></tr></table></figure><a class="simple-lightbox" href="/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/image-20230718094005578.png"><img   src="/images/loading.svg" data-src="/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/image-20230718094005578.png"  class="" title="This is an test image" lazyload></a>]]></content>
+    <content type="html"><![CDATA[<p>Hexo使用说明</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo cl # 清理缓存</span><br><span class="line">hexo g  # 生成博客</span><br><span class="line">hexo s  # 本地部署</span><br><span class="line">hexo d  # 上线部署</span><br></pre></td></tr></table></figure><a class="simple-lightbox" href="/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/image-20230718094005578.png"><img   src="/images/loading.svg" data-src="/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/image-20230718094005578.png"  class="" title="This is an test image" lazyload></a><p>插入图片的话，安装插件，然后用下面的格式进行插入即可，图片描述可以自行修改</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img imageName imageDescription %&#125;</span><br></pre></td></tr></table></figure><p>博客的分类标签摘要等配置看下图即可</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title: Hexo使用说明</span><br><span class="line">date: 2023-07-18 09:30:09</span><br><span class="line">author: Kidder1</span><br><span class="line">summary: Hexo使用简要说</span><br><span class="line">categories: Begin</span><br><span class="line">tag: </span><br><span class="line">- Begin </span><br><span class="line">- Hexo</span><br></pre></td></tr></table></figure><p>在根目录下面设置了两个sh文件，无论部署还是测试直接运行即可</p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;Hexo使用说明&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/</summary>
+&lt;figure class=&quot;highlight text&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;</summary>
       
     
     
     
     <category term="Begin" scheme="https://kidder1.github.io/categories/Begin/"/>
     
+    
+    <category term="Begin" scheme="https://kidder1.github.io/tags/Begin/"/>
+    
+    <category term="Hexo" scheme="https://kidder1.github.io/tags/Hexo/"/>
     
   </entry>
   
