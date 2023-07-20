@@ -1,3 +1,4 @@
+https://kidder1.github.io/2023/07/19/movfuscator%E6%B7%B7%E6%B7%86/
 https://kidder1.github.io/2023/07/18/hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/
 https://kidder1.github.io/about/index.html
 https://kidder1.github.io/tags/index.html
@@ -9,3 +10,4 @@ https://kidder1.github.io/
 https://kidder1.github.io/tags/Begin/
 https://kidder1.github.io/tags/Hexo/
 https://kidder1.github.io/categories/Begin/
+https://kidder1.github.io/categories/Reverse/
