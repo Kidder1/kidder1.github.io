@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>数论和抽象代数基础</title>
+<meta name="keywords" content="数论和抽象代数基础, Kidder1&#39;s Blog!">
+<meta name="description" content="素数  欧几里得定理  算术基本定理
+
+模运算
+
+
+
+
+
+欧几里得算法：辗转相除法
+
+将大的数字的最大公因数可以转换成小的数字进行计算
+
+乘法逆元​	
+ 
+
+中国剩余定理
+
+">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="数论和抽象代数基础">
+<meta property="og:description" content="素数  欧几里得定理  算术基本定理
+
+模运算
+
+
+
+
+
+欧几里得算法：辗转相除法
+
+将大的数字的最大公因数可以转换成小的数字进行计算
+
+乘法逆元​	
+ 
+
+中国剩余定理
+
+">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <link rel="stylesheet" href="/style/simple-lightbox.min.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Kidder1's Blog!" type="application/atom+xml">
+</head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kidder1.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://kidder1.github.io">
+        <h1 class="site-title">Kidder1&#39;s Blog!</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/categories" class="menu purple-link">
+        分类
+      </a>
+    
+  
+    
+      <a href="/tags/" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">数论和抽象代数基础</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-07-23</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/math/">
+              math
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="素数-欧几里得定理-算术基本定理"><a href="#素数-欧几里得定理-算术基本定理" class="headerlink" title="素数  欧几里得定理  算术基本定理"></a>素数  欧几里得定理  算术基本定理</h1><a class="simple-lightbox" href="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723154128841.png"><img   src="/images/loading.svg" data-src="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723154128841.png"  class="" lazyload></a>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a><a class="simple-lightbox" href="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723154730486.png"><img   src="/images/loading.svg" data-src="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723154730486.png"  class="" lazyload></a></h2><h1 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h1><a class="simple-lightbox" href="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723154926042.png"><img   src="/images/loading.svg" data-src="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723154926042.png"  class="" lazyload></a>
+
+<a class="simple-lightbox" href="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723155116655.png"><img   src="/images/loading.svg" data-src="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723155116655.png"  class="" lazyload></a>
+
+<a class="simple-lightbox" href="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723155142800.png"><img   src="/images/loading.svg" data-src="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723155142800.png"  class="" lazyload></a>
+
+<h1 id="欧几里得算法：辗转相除法"><a href="#欧几里得算法：辗转相除法" class="headerlink" title="欧几里得算法：辗转相除法"></a>欧几里得算法：辗转相除法</h1><a class="simple-lightbox" href="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723201741963.png"><img   src="/images/loading.svg" data-src="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723201741963.png"  class="" lazyload></a>
+
+<p>将大的数字的最大公因数可以转换成小的数字进行计算</p>
+<p><strong><a class="simple-lightbox" href="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723201915279.png"><img   src="/images/loading.svg" data-src="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723201915279.png"  class="" lazyload></a></strong></p>
+<h1 id="乘法逆元"><a href="#乘法逆元" class="headerlink" title="乘法逆元"></a>乘法逆元</h1><p>​	<a class="simple-lightbox" href="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723205038469.png"><img   src="/images/loading.svg" data-src="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723205038469.png"  class="" lazyload></a></p>
+ <a class="simple-lightbox" href="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723210310770.png"><img   src="/images/loading.svg" data-src="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723210310770.png"  class="" lazyload></a>
+
+<h1 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h1><a class="simple-lightbox" href="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723212100571.png"><img   src="/images/loading.svg" data-src="/2023/07/23/%E6%95%B0%E8%AE%BA%E5%92%8C%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/image-20230723212100571.png"  class="" lazyload></a>
+
+
+        </div>
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E7%B4%A0%E6%95%B0-%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E5%AE%9A%E7%90%86-%E7%AE%97%E6%9C%AF%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="top-box-text">素数  欧几里得定理  算术基本定理</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link"><span class="top-box-text"></span></a></li></ol></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E6%A8%A1%E8%BF%90%E7%AE%97"><span class="top-box-text">模运算</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%EF%BC%9A%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95"><span class="top-box-text">欧几里得算法：辗转相除法</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83"><span class="top-box-text">乘法逆元</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="top-box-text">中国剩余定理</span></a></li></ol>
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2023/07/20/crypto/">
+          <h3 class="post-title">
+            下一篇：Crypto_CTF
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/Kidder1" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+  
+  
+  
+  
+    
+      <a href="https://beian.miit.gov.cn" target="_blank">陕ICP备2022004010号-1</a>
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script src="/js/simple-lightbox.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {new SimpleLightbox('.post-detail .simple-lightbox', {fileExt: false,captionsData:'alt'});});</script></body>
+</html>
+
