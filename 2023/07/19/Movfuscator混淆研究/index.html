@@ -9,13 +9,13 @@
 
 <meta charset="utf-8" >
 
-<title>Movfuscator混淆</title>
-<meta name="keywords" content="Movfuscator混淆, Kidder1&#39;s Blog!">
+<title>Movfuscator混淆研究</title>
+<meta name="keywords" content="Movfuscator混淆研究, Kidder1&#39;s Blog!">
 <meta name="description" content="movfuscator混淆">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="Movfuscator混淆">
+<meta property="og:title" content="Movfuscator混淆研究">
 <meta property="og:description" content="movfuscator混淆">
 
 <link rel="shortcut icon" href="/favicon.ico">
@@ -83,7 +83,7 @@
   <div class="content-container">
     <div class="post-detail">
       
-      <h2 class="post-title">Movfuscator混淆</h2>
+      <h2 class="post-title">Movfuscator混淆研究</h2>
       <div class="post-info post-detail-info">
         <span><i class="icon icon-calendar-outline"></i> 2023-07-19</span>
         
@@ -120,38 +120,38 @@
 </ul>
 <h1 id="例子ciscn-2023-moveAside"><a href="#例子ciscn-2023-moveAside" class="headerlink" title="例子ciscn 2023 moveAside"></a>例子ciscn 2023 moveAside</h1><p>这道题mov混淆呢，当时没有做出来，现在看了一些师傅的题解，稍微复盘总结一</p>
 <h2 id="查找字符串"><a href="#查找字符串" class="headerlink" title="查找字符串"></a>查找字符串</h2><p>找到字符串向上翻阅</p>
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230719171047390.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230719171047390.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230719171047390.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230719171047390.png"  class="" lazyload></a>
 
 <p>可以找到密文，这里我已经转成数组形式了</p>
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230719171223774.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230719171223774.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230719171223774.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230719171223774.png"  class="" lazyload></a>
 
 <p>这里可以得到字符串长度是44</p>
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230719172931878.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230719172931878.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230719172931878.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230719172931878.png"  class="" lazyload></a>
 
 <p>然后这里直接下断点调试的话是会触发异常的，可以看到这里调用了sigaction函数</p>
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720092516751.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720092516751.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720092516751.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720092516751.png"  class="" lazyload></a>
 
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720092828038.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720092828038.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720092828038.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720092828038.png"  class="" lazyload></a>
 
 <p>IDA这个异常处理的过程我一直不是很了解,根据搜索字符串然后下断点调试再试试</p>
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720102536313.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720102536313.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720102536313.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720102536313.png"  class="" lazyload></a>
 
 <p>这里又触发异常了，这里设置成这样好像就不会有提示了</p>
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720102714851.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720102714851.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720102714851.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720102714851.png"  class="" lazyload></a>
 
 <p>然后这个一直按着F9调试一直等到所有的停住即可</p>
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720110254452.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720110254452.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720110254452.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720110254452.png"  class="" lazyload></a>
 
 <p>然后一直没有反应，在密文那块下了一个读写断点</p>
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720111141895.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720111141895.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720111141895.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720111141895.png"  class="" lazyload></a>
 
 <p>密文长度</p>
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720111254827.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230720111254827.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720111254827.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230720111254827.png"  class="" lazyload></a>
 
 <p>跳不出来，，，我晕了。。。。算了还是太菜了。。。</p>
 <h2 id="用工具"><a href="#用工具" class="headerlink" title="用工具"></a>用工具</h2><p>这个破工具装了一下午，刚开始在ubuntu18上面，结果那个clang的版本不够，然后有在22上面装，结果编译那个库编译了几十分钟，然后我又make -j8，才搞好。</p>
 <p>试试效果怎么样</p>
-<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230719182131996.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86/image-20230719182131996.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230719182131996.png"><img   src="/images/loading.svg" data-src="/2023/07/19/Movfuscator%E6%B7%B7%E6%B7%86%E7%A0%94%E7%A9%B6/image-20230719182131996.png"  class="" lazyload></a>
 
 <p>好吧，结果惨不忍睹，不能运行，不能反编译，跟没用一样。。。大概也就这样，这玩意肯定工程上面用不上，只能对简单的程序进行一些操作，也只能在CTF这里玩完了，但不妨碍它是一个伟大的发明。</p>
 <p>参考博客</p>
