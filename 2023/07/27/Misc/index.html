@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>Misc</title>
+<meta name="keywords" content="Misc, Kidder1&#39;s Blog!">
+<meta name="description" content="flag 为明文直接搜索，WireShark设置如下
+关于分组字节流，请看
+
+
+“分组字节流” 是数据包的原始二进制表示，以十六进制显示。
+“分组列表” 是捕获到的数据包的可视化列表，显示数据包的摘要信息。
+“分组详情” 提供选定数据包的深">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Misc">
+<meta property="og:description" content="flag 为明文直接搜索，WireShark设置如下
+关于分组字节流，请看
+
+
+“分组字节流” 是数据包的原始二进制表示，以十六进制显示。
+“分组列表” 是捕获到的数据包的可视化列表，显示数据包的摘要信息。
+“分组详情” 提供选定数据包的深">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <link rel="stylesheet" href="/style/simple-lightbox.min.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Kidder1's Blog!" type="application/atom+xml">
+</head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kidder1.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://kidder1.github.io">
+        <h1 class="site-title">Kidder1&#39;s Blog!</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/categories" class="menu purple-link">
+        分类
+      </a>
+    
+  
+    
+      <a href="/tags/" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">Misc</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-07-27</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/misc/">
+              misc
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="flag-为明文"><a href="#flag-为明文" class="headerlink" title="flag 为明文"></a>flag 为明文</h1><p>直接搜索，WireShark设置如下<br><a class="simple-lightbox" href="/Misc/image-20230727095518075.png"><img   src="/images/loading.svg" data-src="/Misc/image-20230727095518075.png"  alt="image-20230727095518075" lazyload></a></p>
+<p>关于分组字节流，请看</p>
+<blockquote>
+<ul>
+<li>“分组字节流” 是数据包的原始二进制表示，以十六进制显示。</li>
+<li>“分组列表” 是捕获到的数据包的可视化列表，显示数据包的摘要信息。</li>
+<li>“分组详情” 提供选定数据包的深层解析，包括每个协议的详细信息。</li>
+</ul>
+</blockquote>
+<h2 id="flag为编码"><a href="#flag为编码" class="headerlink" title="flag为编码"></a>flag为编码</h2><blockquote>
+<p>flag的十六进制编码：666c6167</p>
+</blockquote>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>通过脚本进行扫描，然后从扫描排查的输出进行判断flag的格式</p>
+<p>脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># encoding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印可打印字符串</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">str_re</span>(<span class="params">str1</span>):</span><br><span class="line">    str2 = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> str1.decode(<span class="string">&#x27;utf8&#x27;</span>, <span class="string">&#x27;ignore&#x27;</span>):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="number">126</span> &gt;= <span class="built_in">ord</span>(i) &gt;= <span class="number">33</span>:</span><br><span class="line">                str2 += i</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            str2 += <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> str2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入文本函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">txt_wt</span>(<span class="params">name, txt1</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;output.txt&quot;</span>, <span class="string">&quot;a&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(<span class="string">&#x27;filename:&#x27;</span> + name)</span><br><span class="line">        f.write(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">        f.write(<span class="string">&#x27;flag:&#x27;</span> + txt1)</span><br><span class="line">        f.write(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">        f.write(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="comment"># 第一次运行，清空output文件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">clear_txt</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;output.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;clear output.txt!!!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归遍历的所有文件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">file_bianli</span>():</span><br><span class="line">    <span class="comment"># 路径设置为当前目录</span></span><br><span class="line">    path = os.getcwd()</span><br><span class="line">    <span class="comment"># 返回文件下的所有文件列表</span></span><br><span class="line">    file_list = []</span><br><span class="line">    <span class="keyword">for</span> i, j, k <span class="keyword">in</span> os.walk(path):</span><br><span class="line">        <span class="keyword">for</span> dd <span class="keyword">in</span> k:</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;.py&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> dd <span class="keyword">and</span> <span class="string">&quot;output.txt&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> dd:</span><br><span class="line">                file_list.append(os.path.join(i, dd))</span><br><span class="line">    <span class="keyword">return</span> file_list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找文件中可能为flag的字符串</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">flag</span>(<span class="params">file_list, flag_list</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> file_list:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(i, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> f.readlines():</span><br><span class="line">                    j1 = str_re(j)  <span class="comment"># 可打印字符串</span></span><br><span class="line">                    <span class="keyword">for</span> k <span class="keyword">in</span> flag_list:</span><br><span class="line">                        <span class="keyword">if</span> k <span class="keyword">in</span> j1:</span><br><span class="line">                            txt_wt(i, j1)</span><br><span class="line">                            <span class="built_in">print</span>(<span class="string">&#x27;filename:&#x27;</span>, i)</span><br><span class="line">                            <span class="built_in">print</span>(<span class="string">&#x27;flag:&#x27;</span>, j1)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;err&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">flag_txt = [<span class="string">&#x27;flag&#123;&#x27;</span>, <span class="string">&#x27;666c6167&#x27;</span>, <span class="string">&#x27;flag&#x27;</span>, <span class="string">&#x27;Zmxh&#x27;</span>, <span class="string">&#x27;&amp;#102&#x27;</span>, <span class="string">&#x27;666C6167&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空输出的文本文件</span></span><br><span class="line">clear_txt()</span><br><span class="line"><span class="comment"># 遍历文件名</span></span><br><span class="line">file_lt = file_bianli()</span><br><span class="line"><span class="comment"># 查找flag关键字</span></span><br><span class="line">flag(file_lt, flag_txt)</span><br></pre></td></tr></table></figure>
+
+<h3 id="三种硬编码区分"><a href="#三种硬编码区分" class="headerlink" title="三种硬编码区分"></a>三种硬编码区分</h3><ol>
+<li>URL编码（URL Encoding）： <strong>URL编码也称为百分号编码（Percent Encoding</strong>），是一种用于在URL中表示特殊字符的编码方式。它将URL中的非字母数字字符转换为特殊格式：%xx，其中xx是字符的十六进制ASCII码表示。这样做是为了避免特殊字符与URL的语法冲突。<br>例如，空格字符（ASCII码为32）在URL编码后将变成”%20”。其他特殊字符也有相应的编码形式。</li>
+</ol>
+<ul>
+<li>字符串：Hello, World!</li>
+<li>URL编码后：Hello%2C%20World%21<br>厨子处理<br><a class="simple-lightbox" href="/Misc/image-20230727134323349.png"><img   src="/images/loading.svg" data-src="/Misc/image-20230727134323349.png"  alt="image-20230727134323349" lazyload></a></li>
+</ul>
+<ol start="2">
+<li>Unicode编码： Unicode编码是一种字符编码标准，<strong>用于表示世界上所有字符的唯一代码点</strong>。它为每个字符分配了一个唯一的整数值，称为Unicode码点。不同的字符集如UTF-8、UTF-16和UTF-32等以不同方式表示Unicode字符。</li>
+</ol>
+<ul>
+<li>字符：爱 (中文“爱”字)</li>
+<li>Unicode码点：U+7231<br><a class="simple-lightbox" href="/Misc/image-20230727134405109.png"><img   src="/images/loading.svg" data-src="/Misc/image-20230727134405109.png"  alt="image-20230727134405109" lazyload></a></li>
+</ul>
+<ol start="3">
+<li><p>HTML实体编码（HTML Entity Encoding）： HTML实体编码用于在HTML文档中表示特殊字符，比如用于显示保留字符（例如小于号和大于号）或不能在HTML文档中直接显示的字符（如版权符号）。</p>
+<p>它的形式是<code>&amp;entity;</code>，其中entity是一个预定义的名称或数字引用，代表特定字符的编码值。</p>
+</li>
+</ol>
+<ul>
+<li>特殊字符：小于号 (&lt;)</li>
+<li>HTML实体编码：&lt;</li>
+</ul>
+<p>联系和区别：</p>
+<ul>
+<li>URL编码和HTML实体编码都是用于在特定上下文中转义特殊字符，以避免冲突或表示不可见字符。</li>
+<li>Unicode编码是字符的标准化表示形式，用于标识字符在全球范围内的唯一代码点。</li>
+</ul>
+<p>识别：</p>
+<ul>
+<li><p>URL编码和HTML实体编码通常以特定的格式出现，如”%xx”和”&entity;”。</p>
+</li>
+<li><p>Unicode编码通常以U+开头，后跟字符的十六进制码点表示。</p>
+<p><a class="simple-lightbox" href="/Misc/image-20230727134458275.png"><img   src="/images/loading.svg" data-src="/Misc/image-20230727134458275.png"  alt="image-20230727134458275" lazyload></a></p>
+</li>
+</ul>
+<h3 id="压缩包处理"><a href="#压缩包处理" class="headerlink" title="压缩包处理"></a>压缩包处理</h3><blockquote>
+<p>注：导出文件请转成原始010二进制各式进行导出，防止有不可打印字符没有导出</p>
+</blockquote>
+<p><a class="simple-lightbox" href="/Misc/image-20230727133555658.png"><img   src="/images/loading.svg" data-src="/Misc/image-20230727133555658.png"  alt="image-20230727133555658" lazyload></a></p>
+<p>定位到包的位置，选择压缩包格式，用原格式导出即可<br><a class="simple-lightbox" href="/Misc/image-20230727133705093.png"><img   src="/images/loading.svg" data-src="/Misc/image-20230727133705093.png"  alt="image-20230727133705093" lazyload></a></p>
+<p><a class="simple-lightbox" href="/Misc/image-20230727133805684.png"><img   src="/images/loading.svg" data-src="/Misc/image-20230727133805684.png"  alt="image-20230727133805684" lazyload></a></p>
+<p><strong><a class="simple-lightbox" href="/Misc/image-20230727133856790.png"><img   src="/images/loading.svg" data-src="/Misc/image-20230727133856790.png"  alt="image-20230727133856790" lazyload></a></strong></p>
+
+        </div>
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#flag-%E4%B8%BA%E6%98%8E%E6%96%87"><span class="top-box-text">flag 为明文</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#flag%E4%B8%BA%E7%BC%96%E7%A0%81"><span class="top-box-text">flag为编码</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%96%B9%E6%B3%95"><span class="top-box-text">方法</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%89%E7%A7%8D%E7%A1%AC%E7%BC%96%E7%A0%81%E5%8C%BA%E5%88%86"><span class="top-box-text">三种硬编码区分</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%A4%84%E7%90%86"><span class="top-box-text">压缩包处理</span></a></li></ol></li></ol></li></ol>
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2023/07/24/pwn/">
+          <h3 class="post-title">
+            下一篇：PWN_CTF
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/Kidder1" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+  
+  
+  
+  
+    
+      <a href="https://beian.miit.gov.cn" target="_blank">陕ICP备2022004010号-1</a>
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script src="/js/simple-lightbox.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {new SimpleLightbox('.post-detail .simple-lightbox', {fileExt: false,captionsData:'alt'});});</script></body>
+</html>
+

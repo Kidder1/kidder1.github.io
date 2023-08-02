@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>RE</title>
+<meta name="keywords" content="RE, Kidder1&#39;s Blog!">
+<meta name="description" content="Android AES附件
+链接：https://pan.baidu.com/s/1AgYjnhu-KwWbpE37RDHnbg?pwd=1111提取码：1111 
+
+考点：TEA AES程序的主逻辑如下，输入经过aes加密和native内">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="RE">
+<meta property="og:description" content="Android AES附件
+链接：https://pan.baidu.com/s/1AgYjnhu-KwWbpE37RDHnbg?pwd=1111提取码：1111 
+
+考点：TEA AES程序的主逻辑如下，输入经过aes加密和native内">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <link rel="stylesheet" href="/style/simple-lightbox.min.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Kidder1's Blog!" type="application/atom+xml">
+</head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kidder1.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://kidder1.github.io">
+        <h1 class="site-title">Kidder1&#39;s Blog!</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/categories" class="menu purple-link">
+        分类
+      </a>
+    
+  
+    
+      <a href="/tags/" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">RE</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-08-01</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/A/">
+              A
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="Android-AES"><a href="#Android-AES" class="headerlink" title="Android AES"></a>Android AES</h1><h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1AgYjnhu-KwWbpE37RDHnbg?pwd=1111">https://pan.baidu.com/s/1AgYjnhu-KwWbpE37RDHnbg?pwd=1111</a><br>提取码：1111 </p>
+</blockquote>
+<h2 id="考点：TEA-AES"><a href="#考点：TEA-AES" class="headerlink" title="考点：TEA AES"></a>考点：TEA AES</h2><p>程序的主逻辑如下，输入经过aes加密和native内部的密文进行比较<br><a class="simple-lightbox" href="/RE/image-20230801221420564.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801221420564.png"  alt="image-20230801221420564" lazyload></a></p>
+<p>进入lib查看，尽量每一个都看一下，因为不同架构IDA反编译的结果可能不一样</p>
+<p><a class="simple-lightbox" href="/RE/image-20230801221703898.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801221703898.png"  alt="image-20230801221703898" lazyload></a></p>
+<p>密文和密钥<br><a class="simple-lightbox" href="/RE/image-20230801222814470.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801222814470.png"  alt="image-20230801222814470" lazyload></a></p>
+<p>很明显的tea加密 ，还有findcrypt也识别为TEA加密</p>
+<p><a class="simple-lightbox" href="/RE/image-20230801223458435.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801223458435.png"  alt="image-20230801223458435" lazyload></a></p>
+<p><a class="simple-lightbox" href="/RE/image-20230801222839474.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801222839474.png"  alt="image-20230801222839474" lazyload></a></p>
+<p>关于arm架构的一些资料<br><a class="simple-lightbox" href="/RE/image-20230801221717212.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801221717212.png"  alt="image-20230801221717212" lazyload></a></p>
+<h3 id="知识点一-TEA加密"><a href="#知识点一-TEA加密" class="headerlink" title="知识点一:TEA加密"></a>知识点一:TEA加密</h3><p>TEA 是一种常见的分组加密算法，密钥为 128 比特位，明文为 64 比特位，主要做了 32 轮变换，每轮变换中都涉及移位和变换。</p>
+<p>识别方法为：TEA 算法中有一个固定的常数 <strong>0x9e3779b9 或者 0x61c88647</strong></p>
+<h2 id="解题代码和TEA加解密源码"><a href="#解题代码和TEA加解密源码" class="headerlink" title="解题代码和TEA加解密源码"></a>解题代码和TEA加解密源码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">encrypt</span><span class="params">(<span class="type">uint32_t</span> *v, <span class="type">uint32_t</span> *k)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">uint32_t</span> v0 = v[<span class="number">0</span>], v1 = v[<span class="number">1</span>], sum = <span class="number">0</span>, i;</span><br><span class="line">  <span class="type">uint32_t</span> delta = <span class="number">0x9e3779b9</span>;</span><br><span class="line">  <span class="type">uint32_t</span> k0 = k[<span class="number">0</span>], k1 = k[<span class="number">1</span>], k2 = k[<span class="number">2</span>], k3 = k[<span class="number">3</span>];</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    sum += delta;</span><br><span class="line">    v0 += ((v1 &lt;&lt; <span class="number">4</span>) + k0) ^ (v1 + sum) ^ ((v1 &gt;&gt; <span class="number">5</span>) + k1);</span><br><span class="line">    v1 += ((v0 &lt;&lt; <span class="number">4</span>) + k2) ^ (v0 + sum) ^ ((v0 &gt;&gt; <span class="number">5</span>) + k3);</span><br><span class="line">  &#125;</span><br><span class="line">  v[<span class="number">0</span>] = v0;</span><br><span class="line">  v[<span class="number">1</span>] = v1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">decrypt</span><span class="params">(<span class="type">uint32_t</span> *v, <span class="type">uint32_t</span> *k)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">uint32_t</span> v0 = v[<span class="number">0</span>], v1 = v[<span class="number">1</span>], sum = <span class="number">0xC6EF3720</span>, i;</span><br><span class="line">  <span class="type">uint32_t</span> delta = <span class="number">0x9e3779b9</span>;</span><br><span class="line">  <span class="type">uint32_t</span> k0 = k[<span class="number">0</span>], k1 = k[<span class="number">1</span>], k2 = k[<span class="number">2</span>], k3 = k[<span class="number">3</span>];</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    v1 -= ((v0 &lt;&lt; <span class="number">4</span>) + k2) ^ (v0 + sum) ^ ((v0 &gt;&gt; <span class="number">5</span>) + k3);</span><br><span class="line">    v0 -= ((v1 &lt;&lt; <span class="number">4</span>) + k0) ^ (v1 + sum) ^ ((v1 &gt;&gt; <span class="number">5</span>) + k1);</span><br><span class="line">    sum -= delta;</span><br><span class="line">  &#125;</span><br><span class="line">  v[<span class="number">0</span>] = v0;</span><br><span class="line">  v[<span class="number">1</span>] = v1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v[<span class="number">4</span>] = &#123;<span class="number">370962600</span>, <span class="number">1695475146</span>, <span class="number">1118301157</span>, <span class="number">328319843</span>&#125;, key[<span class="number">4</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i += <span class="number">2</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    decrypt(v + i, key);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%x, %x, &quot;</span>, (v + i)[<span class="number">0</span>], (v + i)[<span class="number">1</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">encrypt</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> *v, <span class="type">unsigned</span> <span class="type">int</span> *key)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> l = v[<span class="number">0</span>], r = v[<span class="number">1</span>], sum = <span class="number">0</span>, delta = <span class="number">0x9e3779b9</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum += delta;</span><br><span class="line">        l += ((r &lt;&lt; <span class="number">4</span>) + key[<span class="number">0</span>]) ^ (r + sum) ^ ((r &gt;&gt; <span class="number">5</span>) + key[<span class="number">1</span>]);</span><br><span class="line">        r += ((l &lt;&lt; <span class="number">4</span>) + key[<span class="number">2</span>]) ^ (l + sum) ^ ((l &gt;&gt; <span class="number">5</span>) + key[<span class="number">3</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    v[<span class="number">0</span>] = l;</span><br><span class="line">    v[<span class="number">1</span>] = r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">decrypt</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> *v, <span class="type">unsigned</span> <span class="type">int</span> *key)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> l = v[<span class="number">0</span>], r = v[<span class="number">1</span>], sum = <span class="number">0</span>, delta = <span class="number">0x9e3779b9</span>;</span><br><span class="line">    sum = delta * <span class="number">32</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        r -= ((l &lt;&lt; <span class="number">4</span>) + key[<span class="number">2</span>]) ^ (l + sum) ^ ((l &gt;&gt; <span class="number">5</span>) + key[<span class="number">3</span>]);</span><br><span class="line">        l -= ((r &lt;&lt; <span class="number">4</span>) + key[<span class="number">0</span>]) ^ (r + sum) ^ ((r &gt;&gt; <span class="number">5</span>) + key[<span class="number">1</span>]);</span><br><span class="line">        sum -= delta;</span><br><span class="line">    &#125;</span><br><span class="line">    v[<span class="number">0</span>] = l;</span><br><span class="line">    v[<span class="number">1</span>] = r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> v[<span class="number">4</span>] = &#123;<span class="number">370962600</span>, <span class="number">1695475146</span>, <span class="number">1118301157</span>, <span class="number">328319843</span>&#125;, key[<span class="number">4</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i += <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        decrypt(v + i, key);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%x, %x, &quot;</span>, (v + i)[<span class="number">0</span>], (v + i)[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line">c = [<span class="number">0x5a87be5e</span>, <span class="number">0x13e418d0</span>, <span class="number">0x66aaefdd</span>, <span class="number">0xb322754f</span>]</span><br><span class="line">key = <span class="string">b&#x27;win_crack_god!@#&#x27;</span></span><br><span class="line">cipher = <span class="string">b&#x27;&#x27;</span>.join([i.to_bytes(<span class="number">4</span>, <span class="string">&#x27;little&#x27;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> c])</span><br><span class="line">aes = AES.new(key, AES.MODE_ECB)</span><br><span class="line"><span class="built_in">print</span>(aes.decrypt(cipher))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>代码解释：来自Chatgpt<br>当我们观察到这段代码时，可以看到它使用了列表推导式和<code>join()</code>函数来将一组整数转换为一个字节字符串。</p>
+<p>让我们逐步解释这段代码的功能：</p>
+<ol>
+<li><code>[i.to_bytes(4, &#39;little&#39;) for i in c]</code>：这是一个列表推导式，遍历列表<code>c</code>中的每个整数<code>i</code>，并将每个整数转换为一个4字节的小端字节序。<code>to_bytes(4, &#39;little&#39;)</code>方法将整数转换为一个字节字符串，其中参数4表示要生成的字节数，’little’表示使用小端字节序进行编码。</li>
+<li><code>b&#39;&#39;.join(...)</code>：<code>join()</code>函数用于连接字符串。在这里，它将列表推导式生成的所有字节字符串连接在一起。<code>b&#39;&#39;</code>是一个空的字节字符串，作为连接时的分隔符。</li>
+</ol>
+<p>综合起来，<code>cipher = b&#39;&#39;.join([i.to_bytes(4, &#39;little&#39;) for i in c])</code>的作用是将列表<code>c</code>中的每个整数转换为4字节的小端字节序，并将它们连接成一个字节字符串。结果存储在<code>cipher</code>变量中，用于后续的解密操作。</p>
+</li>
+<li><p>至于填充模式，默认就是PKCS5Padding</p>
+</li>
+</ul>
+<h1 id="黑客偷走的密码（AES）"><a href="#黑客偷走的密码（AES）" class="headerlink" title="黑客偷走的密码（AES）"></a>黑客偷走的密码（AES）</h1><h2 id="附件-1"><a href="#附件-1" class="headerlink" title="附件"></a>附件</h2><blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1F5S5juDhDUdkdHiMMCesug?pwd=1111">https://pan.baidu.com/s/1F5S5juDhDUdkdHiMMCesug?pwd=1111</a><br>提取码：1111 </p>
+</blockquote>
+<p>描述：财务人员的电脑中了勒索病毒，重要账号的密码文件被加密了，必须向攻击者支付比特币才能获得解密密码。作为安全人员，你有办法还原文件，找回文件中的密码吗？</p>
+<h2 id="考点：AES-WIN-API分析"><a href="#考点：AES-WIN-API分析" class="headerlink" title="考点：AES  WIN API分析"></a>考点：AES  WIN API分析</h2><p>插件识别出来是AES</p>
+<p><a class="simple-lightbox" href="/RE/image-20230801230350033.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801230350033.png"  alt="image-20230801230350033" lazyload></a></p>
+<p>Key</p>
+<p><a class="simple-lightbox" href="/RE/image-20230801231237661.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801231237661.png"  alt="image-20230801231237661" lazyload></a></p>
+<p>解题代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line">k = [<span class="number">0x16157E2B</span>, <span class="number">0xA6D2AE28</span>, <span class="number">0x8815F7AB</span>, <span class="number">0x3C4FCF09</span>]</span><br><span class="line">key = <span class="string">b&quot;&quot;</span>.join([i.to_bytes(<span class="number">4</span>, <span class="string">&quot;little&quot;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> k ])</span><br><span class="line">cry = <span class="built_in">open</span>(<span class="string">&quot;flag.txt.cry&quot;</span>, <span class="string">&quot;rb&quot;</span>).read()</span><br><span class="line">aes = AES.new(key, AES.MODE_ECB)</span><br><span class="line">plain = aes.decrypt(cry).decode()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;plain text: <span class="subst">&#123;plain&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#Android-AES"><span class="top-box-text">Android AES</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E9%99%84%E4%BB%B6"><span class="top-box-text">附件</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E8%80%83%E7%82%B9%EF%BC%9ATEA-AES"><span class="top-box-text">考点：TEA AES</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-TEA%E5%8A%A0%E5%AF%86"><span class="top-box-text">知识点一:TEA加密</span></a></li></ol></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E8%A7%A3%E9%A2%98%E4%BB%A3%E7%A0%81%E5%92%8CTEA%E5%8A%A0%E8%A7%A3%E5%AF%86%E6%BA%90%E7%A0%81"><span class="top-box-text">解题代码和TEA加解密源码</span></a></li></ol></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E9%BB%91%E5%AE%A2%E5%81%B7%E8%B5%B0%E7%9A%84%E5%AF%86%E7%A0%81%EF%BC%88AES%EF%BC%89"><span class="top-box-text">黑客偷走的密码（AES）</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E9%99%84%E4%BB%B6-1"><span class="top-box-text">附件</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E8%80%83%E7%82%B9%EF%BC%9AAES-WIN-API%E5%88%86%E6%9E%90"><span class="top-box-text">考点：AES  WIN API分析</span></a></li></ol></li></ol>
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2023/07/27/Misc/">
+          <h3 class="post-title">
+            下一篇：Misc
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/Kidder1" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+  
+  
+  
+  
+    
+      <a href="https://beian.miit.gov.cn" target="_blank">陕ICP备2022004010号-1</a>
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script src="/js/simple-lightbox.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {new SimpleLightbox('.post-detail .simple-lightbox', {fileExt: false,captionsData:'alt'});});</script></body>
+</html>
+
