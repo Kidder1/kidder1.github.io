@@ -237,7 +237,9 @@
 <p>这里一个特征就是，p通过函数生成512位的素数，然后q为其相邻的下一个素数，可以进行测试</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line">p = getPrime(<span class="number">512</span>)</span><br><span class="line">q = gmpy2.next_prime(p)</span><br><span class="line"><span class="built_in">print</span>(q-p)</span><br></pre></td></tr></table></figure>
 
-<p>解题原理<br><a class="simple-lightbox" href="/crypto/image-20230801080504699.png"><img   src="/images/loading.svg" data-src="/crypto/image-20230801080504699.png"  alt="image-20230801080504699" lazyload></a></p>
+<p>解题原理</p>
+<a class="simple-lightbox" href="/2023/07/20/Crypto_CTF/image-20230801080504699.png"><img   src="/images/loading.svg" data-src="/2023/07/20/Crypto_CTF/image-20230801080504699.png"  class="" lazyload></a>
+
 <p>代码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> *</span><br><span class="line">n =</span><br><span class="line">e = </span><br><span class="line">c = </span><br><span class="line">sn = gmpy2.isqrt(n)</span><br><span class="line">q = gmpy2.next_prime(sn)</span><br><span class="line">p = n // q</span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">phi = (p-<span class="number">1</span>)*(q-<span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phi)</span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n)</span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(m))</span><br></pre></td></tr></table></figure>
 
@@ -284,14 +286,15 @@
 <li>输出：128 比特。</li>
 <li>SPN 网络结构。</li>
 </ol>
-<p><a class="simple-lightbox" href="/crypto/f60151970f.png"><img   src="/images/loading.svg" data-src="/crypto/f60151970f.png"  alt="图 1" lazyload></a></p>
+<a class="simple-lightbox" href="/2023/07/20/Crypto_CTF/f60151970f.png"><img   src="/images/loading.svg" data-src="/2023/07/20/Crypto_CTF/f60151970f.png"  class="" lazyload></a>
+
 <h3 id="与DES的注意点"><a href="#与DES的注意点" class="headerlink" title="与DES的注意点"></a>与DES的注意点</h3><ol>
 <li>每一刻从64位变成128位</li>
 <li>AES采用的的SPN网络结构与Feistel相比，可以加密整个块，并且解密必须是对加密的逆运算</li>
 <li>SPN全称为<code>Substitution-permutation network</code>即代换-置换网络，简单的说就是会对块进行替换，置换等多重迭代操作。</li>
 </ol>
 <h3 id="迭代过程"><a href="#迭代过程" class="headerlink" title="迭代过程"></a>迭代过程</h3><ol>
-<li><strong>AddRoundKey轮密钥加</strong><br><a class="simple-lightbox" href="/crypto/image-20230802155225058.png"><img   src="/images/loading.svg" data-src="/crypto/image-20230802155225058.png"  alt="image-20230802155225058" lazyload></a></li>
+<li><strong>AddRoundKey轮密钥加</strong><a class="simple-lightbox" href="/2023/07/20/Crypto_CTF/image-20230802155225058.png"><img   src="/images/loading.svg" data-src="/2023/07/20/Crypto_CTF/image-20230802155225058.png"  class="" lazyload></a></li>
 <li><strong>SubBytes字节替换</strong><br>这里引入一个S盒，然后进行S盒替换</li>
 <li><strong>ShiftRows行位移变换</strong><br>这也是一次扩散处理，达到雪崩效应（雪崩效应是指当输入发生最微小的改变（例如，反转一个二进制位）时，也会导致输出的不可区分性改变，即扩大错误防止攻击者找到不同明密文之间的关系）。</li>
 <li><strong>MixColumns列混合变换</strong><br>也是扩散操作</li>
