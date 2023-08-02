@@ -9,20 +9,14 @@
 
 <meta charset="utf-8" >
 
-<title>RE</title>
-<meta name="keywords" content="RE, Kidder1&#39;s Blog!">
-<meta name="description" content="Android AES附件
-链接：https://pan.baidu.com/s/1AgYjnhu-KwWbpE37RDHnbg?pwd=1111提取码：1111 
-
-考点：TEA AES程序的主逻辑如下，输入经过aes加密和native内">
+<title>Reverse_CTF</title>
+<meta name="keywords" content="Reverse_CTF, Kidder1&#39;s Blog!">
+<meta name="description" content="Reverse_CTF刷题和知识点记录">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="RE">
-<meta property="og:description" content="Android AES附件
-链接：https://pan.baidu.com/s/1AgYjnhu-KwWbpE37RDHnbg?pwd=1111提取码：1111 
-
-考点：TEA AES程序的主逻辑如下，输入经过aes加密和native内">
+<meta property="og:title" content="Reverse_CTF">
+<meta property="og:description" content="Reverse_CTF刷题和知识点记录">
 
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="stylesheet" href="/style/main.css">
@@ -89,15 +83,15 @@
   <div class="content-container">
     <div class="post-detail">
       
-      <h2 class="post-title">RE</h2>
+      <h2 class="post-title">Reverse_CTF</h2>
       <div class="post-info post-detail-info">
         <span><i class="icon icon-calendar-outline"></i> 2023-08-01</span>
         
           <span>
           <i class="icon icon-pricetags-outline"></i>
             
-              <a href="/tags/A/">
-              A
+              <a href="/tags/Reverse/">
+              Reverse
                 
               </a>
             
@@ -109,14 +103,23 @@
           <h1 id="Android-AES"><a href="#Android-AES" class="headerlink" title="Android AES"></a>Android AES</h1><h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><blockquote>
 <p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1AgYjnhu-KwWbpE37RDHnbg?pwd=1111">https://pan.baidu.com/s/1AgYjnhu-KwWbpE37RDHnbg?pwd=1111</a><br>提取码：1111 </p>
 </blockquote>
-<h2 id="考点：TEA-AES"><a href="#考点：TEA-AES" class="headerlink" title="考点：TEA AES"></a>考点：TEA AES</h2><p>程序的主逻辑如下，输入经过aes加密和native内部的密文进行比较<br><a class="simple-lightbox" href="/RE/image-20230801221420564.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801221420564.png"  alt="image-20230801221420564" lazyload></a></p>
+<h2 id="考点：TEA-AES"><a href="#考点：TEA-AES" class="headerlink" title="考点：TEA AES"></a>考点：TEA AES</h2><p>程序的主逻辑如下，输入经过aes加密和native内部的密文进行比较</p>
+<a class="simple-lightbox" href="/2023/08/01/Reverse_CTF/image-20230801221420564.png"><img   src="/images/loading.svg" data-src="/2023/08/01/Reverse_CTF/image-20230801221420564.png"  class="" lazyload></a>
+
 <p>进入lib查看，尽量每一个都看一下，因为不同架构IDA反编译的结果可能不一样</p>
-<p><a class="simple-lightbox" href="/RE/image-20230801221703898.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801221703898.png"  alt="image-20230801221703898" lazyload></a></p>
-<p>密文和密钥<br><a class="simple-lightbox" href="/RE/image-20230801222814470.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801222814470.png"  alt="image-20230801222814470" lazyload></a></p>
+<a class="simple-lightbox" href="/2023/08/01/Reverse_CTF/image-20230801221703898.png"><img   src="/images/loading.svg" data-src="/2023/08/01/Reverse_CTF/image-20230801221703898.png"  class="" lazyload></a>
+
+<p>密文和密钥</p>
+<a class="simple-lightbox" href="/2023/08/01/Reverse_CTF/image-20230801222814470.png"><img   src="/images/loading.svg" data-src="/2023/08/01/Reverse_CTF/image-20230801222814470.png"  class="" lazyload></a>
+
 <p>很明显的tea加密 ，还有findcrypt也识别为TEA加密</p>
-<p><a class="simple-lightbox" href="/RE/image-20230801223458435.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801223458435.png"  alt="image-20230801223458435" lazyload></a></p>
-<p><a class="simple-lightbox" href="/RE/image-20230801222839474.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801222839474.png"  alt="image-20230801222839474" lazyload></a></p>
-<p>关于arm架构的一些资料<br><a class="simple-lightbox" href="/RE/image-20230801221717212.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801221717212.png"  alt="image-20230801221717212" lazyload></a></p>
+<a class="simple-lightbox" href="/2023/08/01/Reverse_CTF/image-20230801223458435.png"><img   src="/images/loading.svg" data-src="/2023/08/01/Reverse_CTF/image-20230801223458435.png"  class="" lazyload></a>
+
+<a class="simple-lightbox" href="/2023/08/01/Reverse_CTF/image-20230801222839474.png"><img   src="/images/loading.svg" data-src="/2023/08/01/Reverse_CTF/image-20230801222839474.png"  class="" lazyload></a>
+
+<p>关于arm架构的一些资料</p>
+<a class="simple-lightbox" href="/2023/08/01/Reverse_CTF/image-20230801221717212.png"><img   src="/images/loading.svg" data-src="/2023/08/01/Reverse_CTF/image-20230801221717212.png"  class="" lazyload></a>
+
 <h3 id="知识点一-TEA加密"><a href="#知识点一-TEA加密" class="headerlink" title="知识点一:TEA加密"></a>知识点一:TEA加密</h3><p>TEA 是一种常见的分组加密算法，密钥为 128 比特位，明文为 64 比特位，主要做了 32 轮变换，每轮变换中都涉及移位和变换。</p>
 <p>识别方法为：TEA 算法中有一个固定的常数 <strong>0x9e3779b9 或者 0x61c88647</strong></p>
 <h2 id="解题代码和TEA加解密源码"><a href="#解题代码和TEA加解密源码" class="headerlink" title="解题代码和TEA加解密源码"></a>解题代码和TEA加解密源码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">encrypt</span><span class="params">(<span class="type">uint32_t</span> *v, <span class="type">uint32_t</span> *k)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">uint32_t</span> v0 = v[<span class="number">0</span>], v1 = v[<span class="number">1</span>], sum = <span class="number">0</span>, i;</span><br><span class="line">  <span class="type">uint32_t</span> delta = <span class="number">0x9e3779b9</span>;</span><br><span class="line">  <span class="type">uint32_t</span> k0 = k[<span class="number">0</span>], k1 = k[<span class="number">1</span>], k2 = k[<span class="number">2</span>], k3 = k[<span class="number">3</span>];</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    sum += delta;</span><br><span class="line">    v0 += ((v1 &lt;&lt; <span class="number">4</span>) + k0) ^ (v1 + sum) ^ ((v1 &gt;&gt; <span class="number">5</span>) + k1);</span><br><span class="line">    v1 += ((v0 &lt;&lt; <span class="number">4</span>) + k2) ^ (v0 + sum) ^ ((v0 &gt;&gt; <span class="number">5</span>) + k3);</span><br><span class="line">  &#125;</span><br><span class="line">  v[<span class="number">0</span>] = v0;</span><br><span class="line">  v[<span class="number">1</span>] = v1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">decrypt</span><span class="params">(<span class="type">uint32_t</span> *v, <span class="type">uint32_t</span> *k)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">uint32_t</span> v0 = v[<span class="number">0</span>], v1 = v[<span class="number">1</span>], sum = <span class="number">0xC6EF3720</span>, i;</span><br><span class="line">  <span class="type">uint32_t</span> delta = <span class="number">0x9e3779b9</span>;</span><br><span class="line">  <span class="type">uint32_t</span> k0 = k[<span class="number">0</span>], k1 = k[<span class="number">1</span>], k2 = k[<span class="number">2</span>], k3 = k[<span class="number">3</span>];</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    v1 -= ((v0 &lt;&lt; <span class="number">4</span>) + k2) ^ (v0 + sum) ^ ((v0 &gt;&gt; <span class="number">5</span>) + k3);</span><br><span class="line">    v0 -= ((v1 &lt;&lt; <span class="number">4</span>) + k0) ^ (v1 + sum) ^ ((v1 &gt;&gt; <span class="number">5</span>) + k1);</span><br><span class="line">    sum -= delta;</span><br><span class="line">  &#125;</span><br><span class="line">  v[<span class="number">0</span>] = v0;</span><br><span class="line">  v[<span class="number">1</span>] = v1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v[<span class="number">4</span>] = &#123;<span class="number">370962600</span>, <span class="number">1695475146</span>, <span class="number">1118301157</span>, <span class="number">328319843</span>&#125;, key[<span class="number">4</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i += <span class="number">2</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    decrypt(v + i, key);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%x, %x, &quot;</span>, (v + i)[<span class="number">0</span>], (v + i)[<span class="number">1</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -142,9 +145,11 @@
 </blockquote>
 <p>描述：财务人员的电脑中了勒索病毒，重要账号的密码文件被加密了，必须向攻击者支付比特币才能获得解密密码。作为安全人员，你有办法还原文件，找回文件中的密码吗？</p>
 <h2 id="考点：AES-WIN-API分析"><a href="#考点：AES-WIN-API分析" class="headerlink" title="考点：AES  WIN API分析"></a>考点：AES  WIN API分析</h2><p>插件识别出来是AES</p>
-<p><a class="simple-lightbox" href="/RE/image-20230801230350033.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801230350033.png"  alt="image-20230801230350033" lazyload></a></p>
+<a class="simple-lightbox" href="/2023/08/01/Reverse_CTF/image-20230801230350033.png"><img   src="/images/loading.svg" data-src="/2023/08/01/Reverse_CTF/image-20230801230350033.png"  class="" lazyload></a>
+
 <p>Key</p>
-<p><a class="simple-lightbox" href="/RE/image-20230801231237661.png"><img   src="/images/loading.svg" data-src="/RE/image-20230801231237661.png"  alt="image-20230801231237661" lazyload></a></p>
+<a class="simple-lightbox" href="/2023/08/01/Reverse_CTF/image-20230801231237661.png"><img   src="/images/loading.svg" data-src="/2023/08/01/Reverse_CTF/image-20230801231237661.png"  class="" lazyload></a>
+
 <p>解题代码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line">k = [<span class="number">0x16157E2B</span>, <span class="number">0xA6D2AE28</span>, <span class="number">0x8815F7AB</span>, <span class="number">0x3C4FCF09</span>]</span><br><span class="line">key = <span class="string">b&quot;&quot;</span>.join([i.to_bytes(<span class="number">4</span>, <span class="string">&quot;little&quot;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> k ])</span><br><span class="line">cry = <span class="built_in">open</span>(<span class="string">&quot;flag.txt.cry&quot;</span>, <span class="string">&quot;rb&quot;</span>).read()</span><br><span class="line">aes = AES.new(key, AES.MODE_ECB)</span><br><span class="line">plain = aes.decrypt(cry).decode()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;plain text: <span class="subst">&#123;plain&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
 
@@ -158,9 +163,9 @@
 
     
       <div class="next-post">
-        <a class="purple-link" href="/2023/07/27/Misc/">
+        <a class="purple-link" href="/2023/07/27/Misc_CTF/">
           <h3 class="post-title">
-            下一篇：Misc
+            下一篇：Misc_CTF
           </h3>
         </a>
       </div>
