@@ -151,20 +151,6 @@
   </url>
   
   <url>
-    <loc>https://kidder1.github.io/tags/Begin/</loc>
-    <lastmod>2023-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kidder1.github.io/tags/Hexo/</loc>
-    <lastmod>2023-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kidder1.github.io/tags/Misc/</loc>
     <lastmod>2023-08-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -179,14 +165,28 @@
   </url>
   
   <url>
-    <loc>https://kidder1.github.io/tags/Pwn/</loc>
+    <loc>https://kidder1.github.io/tags/Python/</loc>
     <lastmod>2023-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kidder1.github.io/tags/Python/</loc>
+    <loc>https://kidder1.github.io/tags/Begin/</loc>
+    <lastmod>2023-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kidder1.github.io/tags/Hexo/</loc>
+    <lastmod>2023-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kidder1.github.io/tags/Pwn/</loc>
     <lastmod>2023-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -196,13 +196,6 @@
   
   <url>
     <loc>https://kidder1.github.io/categories/Crypto/</loc>
-    <lastmod>2023-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kidder1.github.io/categories/Begin/</loc>
     <lastmod>2023-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -223,14 +216,21 @@
   </url>
   
   <url>
-    <loc>https://kidder1.github.io/categories/Pwn/</loc>
+    <loc>https://kidder1.github.io/categories/Python/</loc>
     <lastmod>2023-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kidder1.github.io/categories/Python/</loc>
+    <loc>https://kidder1.github.io/categories/Begin/</loc>
+    <lastmod>2023-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kidder1.github.io/categories/Pwn/</loc>
     <lastmod>2023-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
