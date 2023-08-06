@@ -21,7 +21,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="stylesheet" href="/style/main.css">
 
-  <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Kidder1's Blog!" type="application/atom+xml">
+  <link rel="stylesheet" href="/style/simple-lightbox.min.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Kidder1's Blog!" type="application/atom+xml">
 </head>
   <body>
     <div id="app" class="main">
@@ -248,8 +248,8 @@
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line">scores = [<span class="number">85</span>, <span class="number">90</span>, <span class="number">78</span>, <span class="number">92</span>, <span class="number">88</span>]</span><br><span class="line">initial_value = <span class="number">0</span></span><br><span class="line">average = reduce(<span class="keyword">lambda</span> x, y: x + y, scores, initial_value) / <span class="built_in">len</span>(scores)</span><br><span class="line"><span class="built_in">print</span>(average)  <span class="comment"># 输出：86.6</span></span><br></pre></td></tr></table></figure>
 
-<p>总结：<code>reduce()</code> 是一个强大的函数，可以用于处理多个元素之间的累积运算，但在 Python 3 中需要导入 <code>functools</code> 模块才能使用。在实际使用中，要确保传递给 <code>reduce()</code> 的函数符合合并运算的要求。<br><strong>注意二者区别：</strong></p>
-<ul>
+<p>总结：<code>reduce()</code> 是一个强大的函数，可以用于处理多个元素之间的累积运算，但在 Python 3 中需要导入 <code>functools</code> 模块才能使用。在实际使用中，要确保传递给 <code>reduce()</code> 的函数符合合并运算的要求。</p>
+<h3 id="注意二者区别"><a href="#注意二者区别" class="headerlink" title="注意二者区别"></a><strong>注意二者区别</strong></h3><ul>
 <li><code>map()</code> 和 <code>reduce()</code> 是 Python 中两个用于处理序列的内置函数，它们都在 <code>functools</code> 模块中提供。</li>
 </ul>
 <p>主要区别如下：</p>
@@ -276,6 +276,53 @@
 </li>
 </ol>
 <p>综上所述，<code>map()</code> 用于对序列中的元素逐个进行相同的处理，而 <code>reduce()</code> 用于对序列中的元素进行累积合并操作。它们在不同的场景下有不同的应用。</p>
+<h3 id="例子：assic二进制转换"><a href="#例子：assic二进制转换" class="headerlink" title="例子：assic二进制转换"></a>例子：assic二进制转换</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> add</span><br><span class="line">b = <span class="string">b&#x27;123&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">bin</span>(i)[<span class="number">2</span>:].zfill(<span class="number">8</span>))</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">bin</span>(i)[<span class="number">2</span>:].zfill(<span class="number">8</span>))))</span><br><span class="line"><span class="built_in">print</span>(reduce(add, [<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">bin</span>(i)[<span class="number">2</span>:].zfill(<span class="number">8</span>))) <span class="keyword">for</span> i <span class="keyword">in</span> b]))</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string"># 对应输出</span></span><br><span class="line"><span class="string">49                          # ascii 1</span></span><br><span class="line"><span class="string">00110001                    # 1的二进制</span></span><br><span class="line"><span class="string">[0, 0, 1, 1, 0, 0, 0, 1]    # 1的二进制的list</span></span><br><span class="line"><span class="string">50                          # ascii 2</span></span><br><span class="line"><span class="string">00110010                    # 2的二进制</span></span><br><span class="line"><span class="string">[0, 0, 1, 1, 0, 0, 1, 0]    # 2的二进制的list</span></span><br><span class="line"><span class="string">51</span></span><br><span class="line"><span class="string">00110011</span></span><br><span class="line"><span class="string">[0, 0, 1, 1, 0, 0, 1, 1]</span></span><br><span class="line"><span class="string"># 二进制的list相加</span></span><br><span class="line"><span class="string">[0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1]</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串切片"><a href="#字符串切片" class="headerlink" title="字符串切片"></a>字符串切片</h2><p>当涉及到字符串切片，有很多有趣且实用的用法。以下是一些示例，展示了字符串切片的不同写法和妙用：</p>
+<ol>
+<li>颠倒字符串</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line">reversed_string = s[::-<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(reversed_string)  </span><br><span class="line"><span class="comment"># 输出: &quot;!dlroW ,olleH&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>每隔一个字符获取一个子串</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line">every_other_char = s[::<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(every_other_char) </span><br><span class="line"><span class="comment"># 输出: &quot;Hlo ol!&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>获取从索引2到索引7之间的子串</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line">substring = s[<span class="number">2</span>:<span class="number">8</span>]</span><br><span class="line"><span class="built_in">print</span>(substring)  <span class="comment"># 输出: &quot;llo, W&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>获取从索引3开始，直到字符串结束的子串</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line">substring = s[<span class="number">3</span>:]</span><br><span class="line"><span class="built_in">print</span>(substring)  <span class="comment"># 输出: &quot;lo, World!&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>获取从字符串开始直到索引7之前的子串</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line">substring = s[:<span class="number">7</span>]</span><br><span class="line"><span class="built_in">print</span>(substring)  <span class="comment"># 输出: &quot;Hello, &quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>通过负数索引来获取子串</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line">substring = s[-<span class="number">6</span>:-<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(substring)  <span class="comment"># 输出: &quot;World&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>获取最后3个字符的子串</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">es = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line">last_three_chars = s[-<span class="number">3</span>:]</span><br><span class="line"><span class="built_in">print</span>(last_three_chars)  <span class="comment"># 输出: &quot;ld!&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>复制整个字符串</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line">copied_string = s[:]</span><br><span class="line"><span class="built_in">print</span>(copied_string)  <span class="comment"># 输出: &quot;Hello, World!&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <h1 id="第三方库使用"><a href="#第三方库使用" class="headerlink" title="第三方库使用"></a>第三方库使用</h1><h2 id="pwntools"><a href="#pwntools" class="headerlink" title="pwntools"></a>pwntools</h2><h3 id="send-recv：数据交互方式汇总"><a href="#send-recv：数据交互方式汇总" class="headerlink" title="send&amp;recv：数据交互方式汇总"></a>send&amp;recv：数据交互方式汇总</h3><p>在 <code>pwntools</code> 库中，有几个常用的数据交互方法，包括 <code>send</code>、<code>sendline</code>、<code>sendafter</code>、<code>sendlineafter</code>、<code>recvuntil</code> 和 <code>recv</code>，它们在与远程服务通信时都有不同的特性和用途。</p>
 <ol>
 <li><code>send(date)</code><ul>
@@ -308,7 +355,7 @@
 <li>使用情景：适用于根据程序输出的特定字符串来动态发送数据，典型用法是在登录过程中根据提示输入用户名和密码。</li>
 <li>示例：</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 创建与远程服务的连接</span></span><br><span class="line">r = remote(<span class="string">&#x27;example.com&#x27;</span>, <span class="number">1337</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等待字符串 &quot;Username: &quot; 在输出中出现，然后发送用户名</span></span><br><span class="line">r.sendafter(<span class="string">&quot;Username: &quot;</span>, <span class="string">&quot;john_doe&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等待字符串 &quot;Password: &quot; 在输出中出现，然后发送密码</span></span><br><span class="line">r.sendafter(<span class="string">&quot;Password: &quot;</span>, <span class="string">&quot;secretpass&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建与远程服务的连接</span></span><br><span class="line">r = remote(<span class="string">&#x27;example.com&#x27;</span>, <span class="number">1337</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等待字符串 &quot;Username: &quot; 在输出中出现，然后发送用户名</span></span><br><span class="line">r.sendafter(<span class="string">&quot;Username: &quot;</span>, <span class="string">&quot;john_doe&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等待字符串 &quot;Password: &quot; 在输出中出现，然后发送密码</span></span><br><span class="line">r.sendafter(<span class="string">&quot;Password: &quot;</span>, <span class="string">&quot;secretpass&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li><code>sendlineafter(sub, data)</code></li>
@@ -343,10 +390,15 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建与远程服务的连接</span></span><br><span class="line">r = remote(<span class="string">&#x27;example.com&#x27;</span>, <span class="number">1337</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接收固定长度的数据</span></span><br><span class="line">data = r.recv(<span class="number">1024</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 处理接收到的数据</span></span><br><span class="line"><span class="built_in">print</span>(data)</span><br></pre></td></tr></table></figure>
 
+<h3 id="gdb查看内存命令"><a href="#gdb查看内存命令" class="headerlink" title="gdb查看内存命令"></a>gdb查看内存命令</h3><blockquote>
+<p>&#x2F;s                 查看相应地址的字符串<br>x&#x2F;i		       查看汇编指令<br>x&#x2F;gx			 查看相应地址的二进制信息<br>x&#x2F;wx			按照字节形式显示二进制信息</p>
+</blockquote>
+<a class="simple-lightbox" href="/2023/08/02/Python%E8%AF%AD%E8%A8%80%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6/image-20230806231820590.png"><img   src="/images/loading.svg" data-src="/2023/08/02/Python%E8%AF%AD%E8%A8%80%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6/image-20230806231820590.png"  class="" lazyload></a>
+
 
         </div>
         <div class="top-div">
-          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E9%AB%98%E7%BA%A7%E5%86%99%E6%B3%95"><span class="top-box-text">高级写法</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="top-box-text">格式化字符串</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="top-box-text">匿名函数</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#map%E6%96%B9%E6%B3%95"><span class="top-box-text">map方法</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#reduce%E6%96%B9%E6%B3%95"><span class="top-box-text">reduce方法</span></a></li></ol></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E4%BD%BF%E7%94%A8"><span class="top-box-text">第三方库使用</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#pwntools"><span class="top-box-text">pwntools</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#send-recv%EF%BC%9A%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F%E6%B1%87%E6%80%BB"><span class="top-box-text">send&amp;recv：数据交互方式汇总</span></a></li></ol></li></ol></li></ol>
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E9%AB%98%E7%BA%A7%E5%86%99%E6%B3%95"><span class="top-box-text">高级写法</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="top-box-text">格式化字符串</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="top-box-text">匿名函数</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#map%E6%96%B9%E6%B3%95"><span class="top-box-text">map方法</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#reduce%E6%96%B9%E6%B3%95"><span class="top-box-text">reduce方法</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8C%E8%80%85%E5%8C%BA%E5%88%AB"><span class="top-box-text">注意二者区别</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9Aassic%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="top-box-text">例子：assic二进制转换</span></a></li></ol></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%87%E7%89%87"><span class="top-box-text">字符串切片</span></a></li></ol></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E4%BD%BF%E7%94%A8"><span class="top-box-text">第三方库使用</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#pwntools"><span class="top-box-text">pwntools</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#send-recv%EF%BC%9A%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F%E6%B1%87%E6%80%BB"><span class="top-box-text">send&amp;recv：数据交互方式汇总</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#gdb%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AD%98%E5%91%BD%E4%BB%A4"><span class="top-box-text">gdb查看内存命令</span></a></li></ol></li></ol></li></ol>
         </div>
       </div>
     </div>
@@ -415,6 +467,6 @@
 
 
 
-  </body>
+  <script src="/js/simple-lightbox.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {new SimpleLightbox('.post-detail .simple-lightbox', {fileExt: false,captionsData:'alt'});});</script></body>
 </html>
 
