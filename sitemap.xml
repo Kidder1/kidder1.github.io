@@ -165,6 +165,13 @@
   </url>
   
   <url>
+    <loc>https://kidder1.github.io/tags/Misc/</loc>
+    <lastmod>2023-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://kidder1.github.io/tags/Reverse/</loc>
     <lastmod>2023-08-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -173,13 +180,6 @@
   
   <url>
     <loc>https://kidder1.github.io/tags/Pwn/</loc>
-    <lastmod>2023-08-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kidder1.github.io/tags/Misc/</loc>
     <lastmod>2023-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -209,6 +209,13 @@
   </url>
   
   <url>
+    <loc>https://kidder1.github.io/categories/Misc/</loc>
+    <lastmod>2023-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://kidder1.github.io/categories/Reverse/</loc>
     <lastmod>2023-08-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -223,7 +230,7 @@
   </url>
   
   <url>
-    <loc>https://kidder1.github.io/categories/Misc/</loc>
+    <loc>https://kidder1.github.io/categories/Math/</loc>
     <lastmod>2023-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -231,13 +238,6 @@
   
   <url>
     <loc>https://kidder1.github.io/categories/Python/</loc>
-    <lastmod>2023-08-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kidder1.github.io/categories/Math/</loc>
     <lastmod>2023-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
